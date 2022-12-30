@@ -1,0 +1,21 @@
+div {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.logo {
+	width: 150px !important;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1rem;
+}
+
+ul {
+	color: white;
+}
