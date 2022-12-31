@@ -1,0 +1,106 @@
+/*******************/
+/***** Global ******/
+/*******************/
+
+.App {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  vertical-align: top;
+}
+
+/*******************/
+/***** Header ******/
+/*******************/
+
+.header-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2%;
+  width: 75%;
+}
+
+.App-logo {
+  height: 15vmin;
+  pointer-events: none;
+}
+
+.brand-name {
+  font-size: 5em;
+}
+
+.sign-in-welcome {
+  margin-right: 4%;
+  padding-top: 4%;
+  cursor: pointer;
+}
+
+.brand-name,
+.sign-in-welcome {
+  -webkit-margin-before: 0em;
+  margin-block-start: 0em;
+}
+
+/*******************/
+/***** Landing *****/
+/*******************/
+
+.carousel {
+  width: 75%;
+  margin-top: 5%;
+}
+
+.carousel-inner,
+.carousel-item {
+  height: 45vh;
+}
+
+.carousel-item{
+  z-index: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+}
+
+/*******************/
+/* Product section */
+/*******************/
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 7% 0 3% 0;
+  width: 75%;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+}
+
+.product p {
+  width: 55%;
+  -webkit-margin-after: 0.25em;
+          margin-block-end: 0.25em;
+}
+
+.image-container {
+  width: 60%;
+}
+
+.product-image {
+  width: 100%;
+}
+
+.prod-name {
+  font-weight: 600;
+  font-size: 1.2em;
+}
