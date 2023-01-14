@@ -1,5 +1,5 @@
+import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
-import Product from './Product'
 import LandingPage from './LandingPage'
 import TopHeader from './TopHeader'
 
@@ -15,11 +15,6 @@ function App() {
     <div className="container">
       <TopHeader />
       <LandingPage />
-      <div className="product-container">
-        <Product img="./images/cardigan1.jpg" name="Brown classic" type="Cardigan" cost="£80"/>
-        <Product img="./images/cardigan2.jpg" name="Cream modern" type="Cardigan" cost="£100"/>
-        <Product img="./images/cardigan3.jpg" name="White classic" type="Pullover" cost="£120"/>
-      </div>
     </div>
   );
 }
