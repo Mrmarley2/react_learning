@@ -17,7 +17,6 @@ const user = {
   telephone: "0787334578",
   company: "Big cots for Tiny Tots",
   profile_picture: profilePic,
-  shopping_cart: ["Battle of the Belgian Buns", "Bananas and How to Eat Them", "Mighty Apes", "Danish or Swedish: The Party Game"],
 }
 
 // makes the user pic into an element that can be passed into render
