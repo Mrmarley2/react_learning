@@ -47,7 +47,7 @@ export default function LandingPage() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <div className="product-container">
+        <div className="product-container top-space">
           <Product img="./images/cardigan1.jpg" name="Brown classic" type="Cardigan" cost="£80"/>
           <Product img="./images/cardigan2.jpg" name="Cream modern" type="Cardigan" cost="£100"/>
           <Product img="./images/cardigan3.jpg" name="White classic" type="Pullover" cost="£120"/>
