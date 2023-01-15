@@ -1,0 +1,256 @@
+/*******************/
+/***** Global ******/
+/*******************/
+
+html {
+  overflow-y: scroll;
+}
+
+.App {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  vertical-align: top;
+}
+
+.top-space {
+  margin-top: 5.7%;
+}
+
+/*******************/
+/***** Header ******/
+/*******************/
+
+.header-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2%;
+  width: 75%;
+}
+
+.App-logo {
+  height: 12vmin;
+  pointer-events: none;
+}
+
+.brand-name {
+  font-size: 5em;
+}
+
+.sign-in-welcome {
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #ce7e1d;
+}
+
+.sign-in-welcome:hover {
+  color: var(--bs-link-color);
+}
+
+.brand-name,
+.sign-in-welcome {
+  -webkit-margin-before: 0em;
+  margin-block-start: 0em;
+}
+
+nav {
+  display: flex;
+  padding-top: 4%;
+  width: 85%;
+  justify-content: flex-end;
+}
+
+nav a {
+  text-decoration: none; 
+  color: var(--bs-body-color);
+}
+
+nav a,
+.sign-in-welcome {
+  font-size: 1.15rem;
+  margin: 0 4%;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/*******************/
+/***** Landing *****/
+/*******************/
+
+.carousel {
+  width: 75%;
+  margin-top: 5.7%;
+}
+
+.carousel-inner,
+.carousel-item {
+  height: 45vh;
+}
+
+.carousel-item img {
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+}
+
+/*******************/
+/* Product section */
+/*******************/
+
+.product-container,
+.product-container-shopping,
+.product-container-shopping-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.product-container,
+.product-container-shopping {
+  width: 75%;
+}
+
+.product-container,
+.product-container-shopping-row {
+  justify-content: space-between;
+}
+
+.product-container-shopping {
+  flex-direction: column;
+}
+
+.shopping-row-2 {
+  margin-top: 4.05%;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+}
+
+.product p {
+  width: 55%;
+  -webkit-margin-after: 0.25em;
+          margin-block-end: 0.25em;
+}
+
+.image-container {
+  width: 60%;
+}
+
+.product-image {
+  width: 100%;
+}
+
+.prod-name {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+/*******************/
+/* Profile section */
+/*******************/
+
+.profile-container {
+  flex-direction: column;
+}
+
+.profile-section {
+  font-size: 1.4em;
+  width: 75%;
+}
+
+.user-pic {
+  height: 15vmin;
+}
+
+.user-container{
+  display: flex;
+}
+
+.user-container ul {
+  padding-left: 0;
+}
+
+.user-container ul li {
+  list-style: none;
+}
+
+.user-details {
+  margin-left: 2%;
+  width: 75%;
+}
+
+.btn-outline-warning {
+  background-color: #ffd60b;
+  width: 20%;
+  margin-top: 5%;
+  color: #490179;
+}
+
+/*******************/
+/** Legal section **/
+/*******************/
+
+.legal-section {
+  width: 75%;
+}
+
+
+/*******************/
+/*** Calc section **/
+/*******************/
+
+.calc-container,
+.calc-values,
+.calc-section {
+  display: flex;
+}
+
+.calc-container,
+.calc-values {
+  flex-direction: column;
+}
+
+.calc-container {
+  height: 45vmin;
+  width: 75%;
+  justify-content: space-evenly;
+}
+
+.calc-container h6 {
+  font-weight: 400;
+}
+
+.calc-section {
+  height: 25vmin;
+}
+
+.calc-container form input{
+  width: 100%;
+}
+
+.calc-container form label{
+  font-weight: 500;
+}
+
+.calc-values {
+  justify-content: space-evenly;
+  width: 30%;
+}
+
+#submit-box {
+  background-color: #ffd60b;
+  color: #490179;
+}
