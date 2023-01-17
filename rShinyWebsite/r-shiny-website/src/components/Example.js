@@ -126,7 +126,7 @@ function Example() {
                             />Overlay smooth trend line
                         </label>
                     </form>
-                    <img className="example-image" src="./img/advertising-marketing.png"></img>
+                    <img className="example-image" src="./img/advertising-marketing.png" alt=""></img>
                     <p>
                         The Google Advertising & Marketing Index tracks queries related to 
                         marketing, advertising, ads, adsense, constant contact, public relations,
@@ -134,7 +134,6 @@ function Example() {
                         US search traffic.
                     </p>
                     {trendLink}
-                    <a href=""></a>
                 </div>
                 <div className="example-code">
                     <ExampleTabs />

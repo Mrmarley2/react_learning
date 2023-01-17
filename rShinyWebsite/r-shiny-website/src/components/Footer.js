@@ -33,7 +33,7 @@ function Footer(){
     target="_blank"
     rel="noreferrer"
     >
-        <img className="posit-logo" src="./img/posit-logo-white-tm.svg"></img>
+        <img className="posit-logo" src="./img/posit-logo-white-tm.svg" alt=""></img>
     </a>
 
     return(

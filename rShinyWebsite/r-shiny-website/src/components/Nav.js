@@ -9,7 +9,7 @@ function Nav() {
     return(
         <div className="r-container nav-container">
             <nav className="nav-bar">
-                <img className="shiny-logo" src="./img/shiny-solo.svg"></img>
+                <img className="shiny-logo" src="./img/shiny-solo.svg" alt=""></img>
                 <ul className="nav-list">
                     <li>
                         <a href="https://shiny.rstudio.com/tutorial/" target="_blank" rel="noreferrer">Get Started</a>

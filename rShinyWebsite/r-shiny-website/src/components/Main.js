@@ -37,7 +37,7 @@ function Main(props) {
     return (
         <div className="r-container hero-container">
             <div className="blue-container">
-                <img className="image image-one" src="./img/shinySiteBandOne.png"></img>
+                <img className="image image-one" src="./img/shinySiteBandOne.png" alt=""></img>
                 <div className="hero-text hero-text-container-one">
                     <div className="tagline">
                         Interact. Analyze. Communicate.
@@ -60,7 +60,7 @@ function Main(props) {
                     with <Link name="themes" link = "http://rstudio.github.io/shinythemes/"/>, <Link name="htmlwidgets" link = "http://www.htmlwidgets.org/"/>, 
                     and JavaScript <Link name="actions" link = "https://github.com/daattali/shinyjs/blob/master/README.md"/>.
                 </div>
-                <img className="image image-two" src="./img/shinySiteBandThree.png"></img>
+                <img className="image image-two" src="./img/shinySiteBandThree.png" alt=""></img>
             </div>
             <div className="white-container gallery-section">
                 <Carousel interval={null}>
