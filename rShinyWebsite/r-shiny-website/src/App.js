@@ -12,7 +12,7 @@ function App() {
       <Main />
       <Example />
       <Footer />
-      <div class="original-link">
+      <div className="original-link">
         link to original site: 
         <a href="https://shiny.rstudio.com/" target="_blank" rel="noreferrer"> R Shiny</a>
       </div>
