@@ -1,0 +1,89 @@
+/************************/
+/*********Global*********/
+/************************/
+
+button {
+  width: 45%;
+  height: 100%;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+/************************/
+/***********App**********/
+/************************/
+
+.app-container,
+.balance-section,
+.balance-form,
+.increase-decrease,
+.interest-charges,
+.balance-form label {
+  display: flex;
+}
+
+.app-container,
+.balance-section,
+.balance-form {
+  flex-direction: column;
+}
+
+.app-container,
+.balance-section,
+.balance-form,
+.balance-form label {
+  align-items: center;
+}
+
+.app-container {
+  height: 100vh;
+}
+
+.value-box {
+  margin-bottom: 5%;
+}
+
+.value-box h1 {
+  font-size: 6em;
+}
+
+.balance-section {
+  height: 25vh;
+  width: 40vh;
+  font-size: 1.5em;;
+}
+
+.balance-form,
+.increase-decrease,
+.interest-charges {
+  width: 100%;
+  align-items: center;
+}
+
+.balance-section,
+.balance-form,
+.increase-decrease,
+.interest-charges {
+  justify-content: space-around;
+}
+
+.increase-decrease,
+.interest-charges {
+  height: 5vh;;
+}
+
+.balance-form {
+  height: 20vh;
+}
+
+.balance-form label {
+  justify-content: center;
+}
+
+.balance-form label input {
+  width: 50%;
+  margin-left: 1%;
+  height: 75%;
+  font-size: 1.2em;
+}
+
