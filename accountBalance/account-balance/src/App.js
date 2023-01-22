@@ -23,7 +23,7 @@ function App() {
   };
 
   // useSelector to find the required slices of state
-  const balance = useSelector((state) => state.counter.value);
+  const balance = useSelector((state) => state.balance.value);
 
   // Initiating the dispatch variable using the useDispatch function.
   const dispatch = useDispatch();

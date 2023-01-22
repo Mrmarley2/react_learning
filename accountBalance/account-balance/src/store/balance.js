@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-export const counterSlice = createSlice({
+export const balanceSlice = createSlice({
     // naming the slice state to balance
     name: "balance",
     
@@ -41,7 +41,7 @@ export const counterSlice = createSlice({
 });
 
 // exporting the action creators to use in App.js
-export const { increase, decrease, interest, charges } = counterSlice.actions;
+export const { increase, decrease, interest, charges } = balanceSlice.actions;
 
 // Exporting the reducer function
-export default counterSlice.reducer;
+export default balanceSlice.reducer;
