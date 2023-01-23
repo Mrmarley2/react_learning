@@ -10,12 +10,15 @@ function App() {
   // hook to define user input
   const [userInput, setUserInput] = useState(0);
 
+  // event to decrease the balance by the input value
   const decreaseEvent = (event) => {
     event.preventDefault();
     dispatch(decrease(Number(userInput)));
     setUserInput(0)
   };
 
+  
+  // event to increase the balance by the input value
   const increaseEvent = (event) => {
     event.preventDefault();
     dispatch(increase(Number(userInput)));

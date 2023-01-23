@@ -1,0 +1,32 @@
+/* used styled-components for most, but did make quick
+additions for functionality here*/
+
+.wide-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-box {
+  width: 100%;
+}
+
+.list-box ul li span {
+  height: 38px;
+}
+
+.button-box {
+  width: 70%;
+}
+
+.list-content {
+  width: 20%;
+}
