@@ -21,6 +21,9 @@ additions for functionality here*/
 
 .list-box ul li span {
   height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-box {
