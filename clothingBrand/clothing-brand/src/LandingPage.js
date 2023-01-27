@@ -27,8 +27,7 @@ export default function LandingPage() {
               className="d-block w-100"
               src="./images/caro2.jpg"
               alt="Second slide"
-            />
-    
+            />    
             <Carousel.Caption>
               <h3>Responsible clothing</h3>
               <p>Everything we do is carbon-neutral, so what you buy does makes a difference</p>
@@ -39,8 +38,7 @@ export default function LandingPage() {
               className="d-block w-100"
               src="./images/caro3.jpg"
               alt="Third slide"
-            />
-    
+            />    
             <Carousel.Caption>
               <h3>Available everywhere</h3>
               <p>Wherever you shop you'll find us</p>

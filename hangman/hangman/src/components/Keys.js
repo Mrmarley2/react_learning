@@ -1,5 +1,4 @@
-
-// component to construct the letters for hangman
+// component to construct the 'keys' users press
 export default function key(props) {
     return(
         <div className="letter-box">
