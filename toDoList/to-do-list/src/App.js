@@ -1,12 +1,21 @@
+import { useSelector, useDispatch } from "react-redux";
 import React,{ useState } from "react";
+import { add, remove, complete, change } from "./state/todo"
 import { Container, Button, Text, List } from "./components/styled";
 import "./App.css"
 
 function App() {
+  // Initiating the dispatch variable using the useDispatch function.
+  const dispatch = useDispatch();
+
+  // useSelector to find the required slices of state
+  // only requires the data portion 
+  const todoList = useSelector((state) => state.todo['data']);
+  //console.log(todoList);
+
   const [input, setInput] = useState("");
   const [edit, setEdit] = useState("");
-  const [todoList, setTodoList] = useState([]);
-
+  
   // this function is the on click for the add button
   // first checks to make sure no blank value is being added
   // informs user if task is blank
@@ -15,18 +24,7 @@ function App() {
     if(input==""){
       alert("You have not entered a task - please try again.");
     } else {
-      const id = todoList.length + 1;
-      // using spread syntax from previous tasks
-      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
-      setTodoList((listItem) => [
-        ...listItem,
-        { 
-          id: id,
-          content: input,
-          complete: false,
-          editing: false,
-        }
-      ]);
+      dispatch(add(input));
       setInput("");
     }      
   };
@@ -35,46 +33,24 @@ function App() {
   // creates a new list with the removed value missing
   // then makes this the new stored state
   function removeTask(id) {
-    let filteredList = todoList.filter(item => item.id !== id);
-    setTodoList(filteredList);      
+    dispatch(remove(id));     
   };
 
-    // this function is the on click for the complete button
-  // first creates a map of the existing data
-  // this map changes the complete value for the correct item
-  // the map is stored as 'list' then set as the to do list
+  // this function is the on click for the complete button
+  // changes the styling of the list item
   function completeTask(id) {
-    let list = todoList.map((listItem) => {
-      let item = {};
-      if (listItem.id == id) {
-          item = { ...listItem, complete: !listItem.complete };
-        } else item = { ...listItem };
-        return item;
-      });
-      setTodoList(list);
+    dispatch(complete(id));
   };
 
-    // this function is the on click for the edit button
-  // first creates a map of the existing data
-  // if the item is not set to editing, changes to editing mode
-  // if currently in editing mode, replaces the content with the edit
-  // the map is stored as 'list' then set as the to do list
-  function editTask(id) {
-    let list = todoList.map((listItem) => {
-      let item = {};
-      if (listItem.id == id) {
-        // check here to prevent blank values being added from edit
-        if(listItem.editing == true & edit!=""){
-          item = { ...listItem, editing: !listItem.editing, content: edit};
-        } else {
-          item = { ...listItem, editing: !listItem.editing};
-        }          
-        } else item = { ...listItem };
-        return item;
-    });
-   
-    setEdit("");
-    setTodoList(list);
+  // this function is the on click for the edit button
+  // passes both id and the edit of content as an array
+  // either changes the editing property of the list item
+  // or changes the content and editing property of the list item
+  function editTask(id, alter) {
+    let array =[id, alter]
+    dispatch(change(array)); 
+    setEdit("");   
+    
   };
 
   return (
@@ -87,38 +63,38 @@ function App() {
             </div>            
           <div className="list-box">
             <ul className="to-do-list">
-              {/* using index to ensure ids and keys are unique */}
-              {todoList.map((todo, index) => {
+              {/* uses keys to iterate through the object */}
+              {Object.keys(todoList).map((key) => {
                 return (
                   <List
-                    complete = {todo.complete}
-                    editing = {todo.editing}
-                    id = {index}                
-                    key = {index}                
+                    completed = {todoList[key]["completed"]}
+                    editing = {todoList[key]["editing"]}
+                    id = {key}                
+                    key = {key}                
                     style = {{
                       listStyle: "none",
-                      textDecoration: todo.complete && "line-through",
+                      textDecoration: todoList[key]["completed"] && "line-through",
                     }}
                   > 
                     <span 
                     className="list-content"
                     style = {{
-                      display: todo.editing && "none",
+                      display: todoList[key].editing && "none",
                     }}>
-                      {todo.content}
+                      {todoList[key].content}
                     </span>                    
                     <Text 
                     value = {edit}
-                    placeholder={todo.content}
+                    placeholder={todoList[key].content}
                     onInput={(e) => setEdit(e.target.value)}
                     style = {{
-                      display: !todo.editing && "none",
+                      display: !todoList[key].editing && "none",
                     }}
                     />                 
                     <div className="button-box">
-                      <Button onClick={() => editTask(todo.id)}>Edit</Button>
-                      <Button onClick={() => removeTask(todo.id)}>Delete</Button>
-                      <Button onClick={() => completeTask(todo.id)}>Completed</Button>
+                      <Button onClick={() => editTask(key, edit)}>Edit</Button>
+                      <Button onClick={() => removeTask(key)}>Delete</Button>
+                      <Button onClick={() => completeTask(key)}>Completed</Button>
                     </div>                    
                   </List>
                 );
