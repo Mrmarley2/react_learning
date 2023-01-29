@@ -1,100 +1,87 @@
-import { useSelector, useDispatch } from "react-redux";
 import React,{ useState } from "react";
-import { } from "./state/hangman"
-import Replaced from "./components/Replaced"
-import logo from './hangman_logo.svg'
-import reset from './reset.svg'
-import './App.css';
-import Key from './components/Keys'
+import logo from './images/hangman_logo.svg'
+import reset from './images/reset.svg'
+import WinMessage from './components/WinMessage'
+import LoseMessage from './components/LoseMessage'
 import Hanged from './components/HangedMan'
+import Logo from './components/Logo'
+import Reset from './components/Reset'
+import Rules from './components/Rules'
+import './App.css';
+
 
 function App() {
-  // Initiating the dispatch variable using the useDispatch function.
-  const dispatch = useDispatch();
-
-  // useSelector to find the required slices of state
-  // only requires the data portion 
-  const hangmanData = useSelector((state) => state.hangman);
-
-  // function to refresh the page (aka restart hangman)
-  const refresh = () => window.location.reload(true);
 
   // adding hooks for user interaction
-  // const [word, setWord] = useState("");
+  const [correct, setCorrect] = useState([]);
+  const [incorrect, setIncorrect] = useState(0);
 
-  // sets the random word to use for hangman
-  let randWord = hangmanData.words[Math.floor(Math.random() * hangmanData.words.length)];
+  // calculation to show correct hangman stage later on
+  // prevents the hanged stages going pass 11
+  function hangedStage(badGuesses) {
+    if(incorrect < 10){
+      return badGuesses+1
+    } else { 
+      return 11 
+    } 
+  } 
+
+  // sets the word to use for hangman and puts it in upper case
+  const word = "overengineering".toUpperCase();
+
+  // function to refresh the page (aka start/restart hangman)
+  function refresh() {
+    window.location.reload(true);
+    // stores the random word in state
+    //dispatch(usedWord(word));
+  }
+
+  // array of the alphabet to iterate through
+  const alphabet = ["A", "B", "C", "D", "E", "F", "G",
+                    "H", "I", "J", "K", "L", "M", "N", 
+                    "O", "P", "Q", "R", "S", "T", "U", 
+                    "V", "W", "X", "Y", "Z"];
 
   // turns the word into an array of characters
-  let wordChars = randWord.split("");
+  // replaces unguessed letters with underscore
+  // guessed letters are shown instead
+  let wordChars = word.split('').map(letter => 
+    correct.includes(letter) ? letter : "_").join(" ");
 
-  // creates an array of keys to iterate in return()
-  let keyChars = [];  
-  for (const key of wordChars.keys()) {
-    keyChars.push(key);
-  };
-    
   return (
-    <div className="app-container">      
+    <div className="app-container">
       <div className="top-row">
-        <img src={logo} className="hanged-logo" alt="logo" />
-        <ul className="replaced-word">
-          {keyChars.map((i) =>{
-            return(
-              <Replaced
-              key = {i}>              
-              </Replaced>
-            )
-          })}
-        </ul>
-        <button type="" className="reset-button">
-          <img src={reset} alt="reset" onClick={refresh}/>
+        <Logo source={logo} />
+        <p className="replaced-word">{wordChars}</p>
+        <button type="" className="reset-button button" onClick={refresh}>
+          <Reset source={reset} alt="reset"/>
           <p>click here to restart</p>
-        </button>        
+        </button>
+        <Rules></Rules>        
       </div>
       <div className="bottom-row">
-        <Hanged image="./images/state11.gif"></Hanged>
-        <div className="keys-container">
-          <div className="keys-column keys-first-column">
-            <Key letter="A"></Key>
-            <Key letter="G"></Key>
-            <Key letter="L"></Key>
-            <Key letter="Q"></Key>
-            <Key letter="V"></Key>
-          </div>
-          <div className="keys-column keys-second-column">
-            <Key letter="B"></Key>
-            <Key letter="H"></Key>
-            <Key letter="M"></Key>
-            <Key letter="R"></Key>
-            <Key letter="W"></Key>
-          </div>
-          <div className="keys-column keys-third-column">
-            <Key letter="C"></Key>
-            <Key letter="I"></Key>
-            <Key letter="N"></Key>
-            <Key letter="S"></Key>
-            <Key letter="X"></Key>          
-          </div>
-          <div className="keys-column keys-fourth-column">
-            <Key letter="D"></Key>
-            <Key letter="J"></Key>
-            <Key letter="O"></Key>
-            <Key letter="T"></Key>
-            <Key letter="Y"></Key>       
-          </div>
-          <div className="keys-column keys-fifth-column">
-            <Key letter="E"></Key>
-            <Key letter="K"></Key> 
-            <Key letter="P"></Key>
-            <Key letter="U"></Key>  
-            <Key letter="Z"></Key>
-          </div>
-          <div className="keys-column keys-fifth-column">
-            <Key letter="F"></Key>
-          </div>
-        </div>        
-      </div>    
+        {/* brings through the correct hangman stage based on the number of incorrect guesses */}
+        <div className="hanged-box">
+          <Hanged image={"./images/state"+ hangedStage(incorrect) +".gif"}></Hanged>
+          {/* if the user has no missing letters left and less than 10 incorrect guesses, they win */}
+          {!wordChars.includes("_") && incorrect < 10 && <WinMessage></WinMessage>}
+          {/* if the user makes 10 incorrect guesses, they lose */}
+          {incorrect >= 10 && <LoseMessage></LoseMessage>}
+        </div>
+        <div className="keys-container ">
+          {alphabet
+              .map((alphabet, index) => 
+              <button className="letter-button button"
+                      key={index}
+                      onClick={() => {
+                  if (word.includes(alphabet)) {
+                      setCorrect([...correct, alphabet]);
+                  } else {
+                    setIncorrect(incorrect + 1);
+                  }
+          }}>{alphabet}</button>)}
+        </div>       
+      </div>   
     </div>
   );
 }
