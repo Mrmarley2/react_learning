@@ -1,0 +1,169 @@
+/******************/
+/** Basic styling */
+/******************/
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-row,
+.bottom-row {
+  display: flex;
+  width: 80%;
+}
+
+.bottom-row {
+  margin-top: 6%;
+}
+
+.top-row {
+  justify-content: space-between;
+}
+
+.reset-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 15%;
+  padding: 0;
+  border: none;
+  background-color: #ffffff;
+}
+
+.reset-button img {
+  width: 50%;
+}
+
+.reset-button p {
+  width: 45%;
+  margin-block-start: 2em;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.hanged-logo {
+  width: 20%;
+}
+
+.help-box {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-box a img {
+  width: 25%
+}
+
+/******************/
+/** Keys styling **/
+/******************/
+
+.keys-container {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  flex-wrap: wrap;
+}
+
+.letter-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7em;
+  margin: 2% 1%;
+  /* border-radius: 50%; */
+  background-color: #898989;
+  color: #ffffff;
+  width: 90px;
+  height: 80px;
+  box-shadow: 5px 10px #212121;
+}
+
+.letter-button:hover {
+  background-color: skyblue;
+  color: beige;
+  transition: 0.2s;
+}
+
+.letter-button-right {
+  background-color: aquamarine;
+  color: beige;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.letter-button-wrong {
+  background-color: darkred;
+  color: beige;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.letter {
+  display: flex;
+  width: 20px;
+  font-size: 2.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+/******************/
+/* Hanged styling */
+/******************/
+
+.hanged-box {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hanged-man {
+  width: 200px;
+  height: 250px;
+  
+}
+
+.hanged-box p {
+  width: 80%;
+  text-align: center;
+  font-weight: 700;
+  color: #8f1049;
+  font-size: 1.6em;
+}
+
+/********************/
+/* Replaced styling */
+/********************/
+
+.replaced-word{
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+  font-size: 3em;
+  margin-top: 3.5%;
+}
